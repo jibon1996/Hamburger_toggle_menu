@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+    background: #262626;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  
+}
+
+.navbar{
+ 
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+.nav-branding{
+    color:#fff;
+    font-size: 30px;
+}
+.nav-item{
+    cursor: pointer;
+}
+.nav-link{
+    color: #fff;
+    font-size: 18px;
+    transition: all 0.5s ease;
+}
+.nav-link:hover,
+.nav-link.active{
+    color:dodgerblue;
+  
+}
+.humbarger{
+    display: none;
+    cursor: pointer;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+}
+section{
+    width: 100%;
+    min-height: 100vh;
+    background: #5664e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+section:nth-child(odd){
+    background: #7ec2d3;
+}
+
+/* Media Quary for Mobile and Tablate  */
+@media screen and (max-width:767px){
+    .humbarger{
+        display: block;
+    }
+      /* by JS active  */
+    .humbarger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .humbarger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .humbarger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        gap: 0;
+        background: #262626;
+        width: 100%;
+        text-align: center;
+        transition: all 0.3s linear;
+    }
+     /* by JS active */
+    .nav-menu.active{
+        left: 0;
+    }
+    .nav-item{
+        width: 100%;
+        margin: 10px 0;
+        padding: 16px 0;
+    }
+  
+    .nav-item:hover{
+        background: red;
+        color: #fff;
+    }
+    .nav-link.active{
+        color: #fff;
+    }
+    .nav-link:hover{
+        color:#fff;
+    }
+}
